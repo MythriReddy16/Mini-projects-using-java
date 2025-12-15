@@ -1,0 +1,59 @@
+public class StudentInformationSystem {
+
+    // Student class
+    static class Student {
+        String name;
+        int age;
+        int[] marks;
+
+        // Constructor
+        Student(String name, int age, int[] marks) {
+            this.name = name;
+            this.age = age;
+            this.marks = marks;
+        }
+
+        // Method to calculate average marks
+        double calculateAverage() {
+            int sum = 0;
+            for (int mark : marks) {
+                sum += mark;
+            }
+            return (double) sum / marks.length;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        // Creating 3 student records
+        Student s1 = new Student("Leela", 20, new int[]{99, 99, 99});
+        Student s2 = new Student("Kavita", 20, new int[]{99, 99, 99});
+        Student s3 = new Student("Jhansi", 20, new int[]{99, 99, 99});
+
+        Student[] students = {s1, s2, s3};
+
+        // Printing formatted output
+        System.out.println("------ Student Information System ------");
+        for (Student s : students) {
+            System.out.println("Name   : " + s.name);
+            System.out.println("Age    : " + s.age);
+            System.out.println("Average Marks : " + String.format("%.2f", s.calculateAverage()));
+            System.out.println("----------------------------------------");
+        }
+
+        // Pair Programming Code Review Section
+        System.out.println("\nCode Review Notes (Pair Programming):");
+
+        System.out.println("Student 1 Review:");
+        System.out.println("- Good use of constructor for initialization.");
+        System.out.println("- Average calculation logic is correct.\n");
+
+        System.out.println("Student 2 Review:");
+        System.out.println("- Used arrays effectively for marks storage.");
+        System.out.println("- Code is readable and well-structured.\n");
+
+        System.out.println("Student 3 Review:");
+        System.out.println("- Proper formatting of output.");
+        System.out.println("- Followed object-oriented principles correctly.");
+    }
+}
